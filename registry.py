@@ -1,18 +1,8 @@
 from xls_w import Excel
 import os
 from GUI import GUI
-from natsort import natsorted, ns
 
 
-# def light_files_in_dir(list_files):
-#     list_files = list(str(file) for file in list_files if not str(file)[:str(file).rfind('.')].isdigit())
-#     list_files = list(map(lambda x: x[x.rfind('№') + 1:x.rfind('.')].lower(), list_files))
-#     return list_files
-#
-#
-# def miss_files(list1, list2):
-#     miss_list = list(set(list1) - set(list2))
-#     return natsorted(miss_list, alg=ns.IGNORECASE)  # or alg=ns.IC
 def eng_to_rus_letters(text):
     return text.replace('a', 'а').replace('e', 'е').replace('o', 'о')\
         .replace('p', 'р').replace('c', 'с').replace('y', 'у').replace('x', 'х')

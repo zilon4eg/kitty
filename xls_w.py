@@ -65,12 +65,6 @@ class Excel:
             if empty_cell_count > 30:
                 return last_cell_with_data
 
-    def get_column(self, column):
-        letter = Excel.number_to_letter(column) if type(column) is int else column
-        list_column = list(str(self.ws[f'{letter}{i}'].value)[:str(self.ws[f'{letter}{i}'].value).rfind('.')
-            if '.' in str(self.ws[f'{letter}{i}'].value) else None] for i in range(2, self.size_column(column) + 1))
-        return list_column
-
     def get_path_active_book(self):
         return self.wb.fullname
 
@@ -97,13 +91,6 @@ class Excel:
             hyperlink = self.ws[f'{position}'].hyperlink
         except Exception:
             hyperlink = None
-
-        # print(name, '<-=->', self.ws[f'{position}'].value)
-        # print(f'{self.dir_scan}\\{file_name}'.replace('\\', '/'), '<-=->', hyperlink.replace('\\', '/')) if hyperlink != None else hyperlink
-        # print(self.font_name, '<-=->', self.ws[f'{position}'].font.name)
-        # print(self.font_size, '<-=->', self.ws[f'{position}'].font.size)
-        # print(Excel.hex_to_rgb(self.hyperlink_color), '<-=->', self.ws[f'{position}'].font.color)
-        # time.sleep(5)
 
         if (
                 name == self.ws[f'{position}'].value
