@@ -8,9 +8,10 @@ class GUI:
     def __init__(self):
         self.version = 'v2.6.2'
         self.config = Config()
+        self.theme = 'LightBrown13'
 
     def main_menu(self):
-        PySimpleGUI.theme('LightBrown13')
+        PySimpleGUI.theme(self.theme)
         settings = self.config.load()
         base_registry_path = settings['path']['base_registry_path']
         base_scan_path = settings['path']['base_scan_path']
