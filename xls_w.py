@@ -1,5 +1,4 @@
 import xlwings
-import time
 
 
 class Excel:
